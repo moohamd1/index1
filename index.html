@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MoveButton</title>
+  <style>
+    .no-button {
+      margin-top: 10px;
+      transition: margin-Left 0.3s ease;
+    }
+
+  </style>
+</head>
+<body>
+   <div style=" background-color:aliceblue ; padding: 30px;text-align: center;translate: -30px 120px;font-size: 1.2rem;width: 800px; margin: 0 auto;">
+  <h1 id="text">هل انت غبي ؟</h1>
+  <button id="reset" style="width: 100px;padding: 10px 9px;border-radius: 5px; 
+  border: none; margin-right: 10px;background-color: red; color: white; font-size: 1rem;cursor: pointer;">Reset</button>
+  <button id="yesBtn" style="width: 100px;padding: 10px 9px;border-radius: 5px; 
+  border: none; margin-right: 10px;background-color: black; color: white; font-size: 1rem;cursor: pointer;">Yes</button>
+  <button id="noBtn" class="no-button" style="width: 100px;padding: 10px 9px;border-radius: 5px; 
+  border: none; margin-right: 10px;background-color: gray; color: white; font-size: 1rem; cursor: pointer;">No</button>
+
+ 
+</div>
+
+<div style="text-align: center;margin-top: 10rem;translate: -30px 120px;">&copy;Developed by @smart.2tech</div>
+
+
+
+
+  <script>
+    var noBtn = document.getElementById("noBtn");
+    var reset = document.getElementById("reset");
+    var textElement = document.getElementById("text");
+    var positions = ["50px", "100px", "300px", "30px", "200px","10px"]; // Define multiple positions here
+
+    var currentPositionIndex = 0;
+
+    noBtn.addEventListener("click", function() {
+      noBtn.style.marginLeft = positions[currentPositionIndex];
+      currentPositionIndex = (currentPositionIndex + 1) % positions.length;
+      console.log(currentPositionIndex);
+      
+    });
+
+    var originalText = textElement.textContent;
+
+    document.getElementById("yesBtn").addEventListener("click", function() {
+      textElement.textContent = "ههههههههه ادري";
+    });
+
+    document.getElementById("reset").addEventListener("click", function(){
+        textElement.textContent = originalText;
+      noBtn.style.marginLeft = "0px";
+    })
+ 
+  </script>
+ 
+</body>
+
+</html>
